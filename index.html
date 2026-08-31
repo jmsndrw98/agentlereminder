@@ -1,0 +1,3075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Chin ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- FAVICONS -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+
+<link rel="manifest" href="site.webmanifest">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   ROOT
+========================= */
+
+:root {
+  --pink: #f39ab0;
+  --pink-light: #ffd6e0;
+  --pink-soft: #f7bfd0;
+  --purple: #6b236d;
+  --purple-dark: #3a103f;
+  --purple-deep: #19051f;
+  --white: #fff9fb;
+  --muted: #e6cbd9;
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  font-family: "Work Sans", sans-serif;
+  color: var(--white);
+
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(255, 170, 200, .25),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(145, 65, 160, .30),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #ff9fba 0%,
+      #c6508a 35%,
+      #67246b 68%,
+      #1b0829 100%
+    );
+
+  background-attachment: fixed;
+}
+
+
+/* =========================
+   TULIP LOADING SCREEN
+========================= */
+
+#loading-screen {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 30% 20%,
+      rgba(255, 185, 210, .28),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      rgba(137, 61, 145, .35),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #ff9db9 0%,
+      #c24f86 42%,
+      #68266d 72%,
+      #1d092a 100%
+    );
+
+  transition:
+    opacity .8s ease,
+    visibility .8s ease;
+}
+
+
+#loading-screen.hide {
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+}
+
+
+.loading-content {
+  text-align: center;
+
+  animation:
+    loadingAppear
+    1s ease forwards;
+}
+
+
+@keyframes loadingAppear {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* =========================
+   TULIP
+========================= */
+
+.tulip-loader {
+  width: 170px;
+  height: 220px;
+
+  position: relative;
+
+  margin:
+    0 auto 20px;
+}
+
+
+.tulip {
+  position: absolute;
+
+  width: 130px;
+  height: 200px;
+
+  left: 50%;
+  top: 5px;
+
+  transform:
+    translateX(-50%);
+
+  animation:
+    tulipSway
+    3s ease-in-out
+    infinite;
+}
+
+
+@keyframes tulipSway {
+
+  0%,
+  100% {
+    transform:
+      translateX(-50%)
+      rotate(-2deg);
+  }
+
+  50% {
+    transform:
+      translateX(-50%)
+      rotate(2deg);
+  }
+
+}
+
+
+/* =========================
+   FLOWER PETALS
+========================= */
+
+.petal {
+  position: absolute;
+
+  top: 5px;
+
+  width: 65px;
+  height: 90px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffd7e5 0%,
+      #ff86b1 50%,
+      #d84683 100%
+    );
+
+  box-shadow:
+    inset 8px 8px 15px
+    rgba(255,255,255,.18),
+
+    0 10px 25px
+    rgba(80,10,60,.18);
+
+  animation:
+    tulipBloom
+    2.8s ease-in-out
+    infinite;
+}
+
+
+.petal-left {
+  left: 8px;
+
+  border-radius:
+    60% 20%
+    55% 35%;
+
+  transform:
+    rotate(-28deg);
+
+  transform-origin:
+    bottom right;
+
+  animation-delay:
+    .1s;
+}
+
+
+.petal-center {
+  left: 32px;
+
+  height: 100px;
+
+  z-index: 3;
+
+  border-radius:
+    50% 50%
+    40% 40%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffe4ec,
+      #ff7eae 55%,
+      #ce3976
+    );
+
+  transform-origin:
+    bottom center;
+
+  animation-delay:
+    .3s;
+}
+
+
+.petal-right {
+  right: 8px;
+
+  border-radius:
+    20% 60%
+    35% 55%;
+
+  transform:
+    rotate(28deg);
+
+  transform-origin:
+    bottom left;
+
+  animation-delay:
+    .5s;
+}
+
+
+@keyframes tulipBloom {
+
+  0%,
+  100% {
+    filter:
+      brightness(.95);
+
+    scale:
+      .94;
+  }
+
+  50% {
+    filter:
+      brightness(1.08);
+
+    scale:
+      1.04;
+  }
+
+}
+
+
+/* =========================
+   STEM
+========================= */
+
+.stem {
+  position: absolute;
+
+  top: 82px;
+  left: 50%;
+
+  width: 12px;
+  height: 110px;
+
+  border-radius:
+    20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #215b50,
+      #62a878,
+      #2c725d
+    );
+
+  transform:
+    translateX(-50%);
+
+  z-index: -1;
+
+  animation:
+    stemGrow
+    2s ease-out
+    infinite;
+}
+
+
+@keyframes stemGrow {
+
+  0% {
+    transform:
+      translateX(-50%)
+      scaleY(.7);
+
+    transform-origin:
+      bottom;
+  }
+
+  50%,
+  100% {
+    transform:
+      translateX(-50%)
+      scaleY(1);
+
+    transform-origin:
+      bottom;
+  }
+
+}
+
+
+/* =========================
+   LEAVES
+========================= */
+
+.leaf {
+  position: absolute;
+
+  width: 55px;
+  height: 28px;
+
+  top: 145px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #78bd84,
+      #2d735d
+    );
+
+  border-radius:
+    100% 0
+    100% 0;
+
+  z-index: 2;
+
+  animation:
+    leafMove
+    3s ease-in-out
+    infinite;
+}
+
+
+.leaf-left {
+  left: 19px;
+
+  transform:
+    rotate(-28deg);
+}
+
+
+.leaf-right {
+  right: 19px;
+
+  transform:
+    scaleX(-1)
+    rotate(-28deg);
+
+  animation-delay:
+    .4s;
+}
+
+
+@keyframes leafMove {
+
+  0%,
+  100% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top:
+      -4px;
+  }
+
+}
+
+
+/* =========================
+   LOADING TEXT
+========================= */
+
+.loading-text {
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    1.45rem;
+
+  font-style:
+    italic;
+
+  color:
+    #fff3f7;
+
+  opacity:
+    .95;
+}
+
+
+.loading-text span {
+  display: inline-block;
+
+  animation:
+    textFloat
+    2.5s ease-in-out
+    infinite;
+}
+
+
+@keyframes textFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+
+    opacity:
+      .75;
+  }
+
+  50% {
+    transform:
+      translateY(-4px);
+
+    opacity:
+      1;
+  }
+
+}
+
+
+/* =========================
+   LOADING DOTS
+========================= */
+
+.loading-dots {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-top: 15px;
+}
+
+
+.loading-dots span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background:
+    #ffd1df;
+
+  animation:
+    loadingDot
+    1.2s ease-in-out
+    infinite;
+}
+
+
+.loading-dots span:nth-child(2) {
+  animation-delay:
+    .15s;
+}
+
+
+.loading-dots span:nth-child(3) {
+  animation-delay:
+    .3s;
+}
+
+
+@keyframes loadingDot {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+
+    opacity:
+      .35;
+  }
+
+  50% {
+    transform:
+      translateY(-8px);
+
+    opacity:
+      1;
+  }
+
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+  width: min(1100px, 100%);
+  margin: auto;
+  padding: 55px 22px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.header p {
+  margin: 0 0 10px;
+
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+
+  color: var(--pink-light);
+}
+
+.header h1 {
+  margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(2.5rem, 6vw, 4.5rem);
+
+  font-weight:
+    500;
+}
+
+
+/* =========================
+   LAYOUT
+========================= */
+
+.stage {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 35px;
+
+  align-items:
+    start;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+  background:
+    rgba(30, 8, 40, .52);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, .13);
+
+  backdrop-filter:
+    blur(18px);
+
+  -webkit-backdrop-filter:
+    blur(18px);
+
+  border-radius:
+    22px;
+
+  padding:
+    30px;
+
+  box-shadow:
+    0 25px 60px
+    rgba(0, 0, 0, .22);
+}
+
+
+/* =========================
+   NOW PLAYING
+========================= */
+
+.now-playing {
+  text-align:
+    center;
+}
+
+.music-label {
+  font-size:
+    .65rem;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    .18em;
+
+  color:
+    var(--pink-light);
+}
+
+#song-title {
+  margin-top:
+    14px;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    2rem;
+
+  font-weight:
+    600;
+}
+
+#song-artist {
+  margin-top:
+    5px;
+
+  color:
+    var(--muted);
+
+  font-size:
+    .82rem;
+}
+
+
+/* =========================
+   CASSETTE AREA
+========================= */
+
+.cassette-art {
+  position:
+    relative;
+
+  width:
+    min(330px, 90%);
+
+  aspect-ratio:
+    1;
+
+  margin:
+    28px auto;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border-radius:
+    24px;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(255,255,255,.25),
+      transparent 12%
+    ),
+    radial-gradient(
+      circle at 80% 75%,
+      rgba(255,190,220,.22),
+      transparent 18%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255,170,200,.18),
+      rgba(76,20,91,.28)
+    );
+
+  overflow:
+    hidden;
+}
+
+
+/* =========================
+   CASSETTE
+========================= */
+
+.cassette {
+  position:
+    relative;
+
+  width:
+    88%;
+
+  height:
+    58%;
+
+  padding:
+    14px;
+
+  border-radius:
+    14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffb6cc 0%,
+      #e76d9d 45%,
+      #6e246d 100%
+    );
+
+  border:
+    2px solid
+    rgba(255,255,255,.38);
+
+  box-shadow:
+    0 20px 35px
+    rgba(0,0,0,.28),
+
+    inset 0 2px
+    rgba(255,255,255,.3);
+
+  transform:
+    rotate(-4deg);
+
+  transition:
+    transform .3s ease;
+}
+
+.cassette-art:hover .cassette {
+  transform:
+    rotate(0deg)
+    scale(1.03);
+}
+
+
+/* =========================
+   CASSETTE TOP
+========================= */
+
+.cassette-top {
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+}
+
+
+/* SCREWS */
+
+.cassette-screw {
+  width:
+    9px;
+
+  height:
+    9px;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(76,20,91,.55);
+
+  box-shadow:
+    inset 0 1px
+    rgba(255,255,255,.3);
+}
+
+
+/* =========================
+   CASSETTE LABEL
+========================= */
+
+.cassette-label {
+  margin:
+    8px 15px 10px;
+
+  padding:
+    9px 15px;
+
+  text-align:
+    center;
+
+  border-radius:
+    8px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff4f7,
+      #ffd7e2
+    );
+
+  color:
+    #4a174f;
+}
+
+
+.cassette-mini-title {
+  margin-bottom:
+    3px;
+
+  font-size:
+    .5rem;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    .18em;
+
+  color:
+    #bd527b;
+}
+
+
+.cassette-song {
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    1.25rem;
+
+  font-weight:
+    700;
+
+  white-space:
+    nowrap;
+
+  overflow:
+    hidden;
+
+  text-overflow:
+    ellipsis;
+}
+
+
+.cassette-artist {
+  margin-top:
+    2px;
+
+  font-size:
+    .55rem;
+
+  color:
+    #80546b;
+}
+
+
+/* =========================
+   TAPE WINDOW
+========================= */
+
+.cassette-window {
+  height:
+    58px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  padding:
+    8px 16px;
+
+  border-radius:
+    7px;
+
+  background:
+    rgba(40,8,44,.72);
+}
+
+
+/* =========================
+   REELS
+========================= */
+
+.cassette-reel {
+  position:
+    relative;
+
+  width:
+    42px;
+
+  height:
+    42px;
+
+  flex-shrink:
+    0;
+
+  border-radius:
+    50%;
+
+  background:
+    repeating-conic-gradient(
+      #ffd4df 0deg 20deg,
+      #7d315f 20deg 40deg
+    );
+
+  border:
+    4px solid
+    #f29ab4;
+}
+
+
+.reel-hole {
+  position:
+    absolute;
+
+  top:
+    50%;
+
+  left:
+    50%;
+
+  width:
+    13px;
+
+  height:
+    13px;
+
+  border-radius:
+    50%;
+
+  background:
+    #3c103f;
+
+  transform:
+    translate(-50%, -50%);
+}
+
+
+/* TAPE */
+
+.tape-line {
+  width:
+    100%;
+
+  height:
+    8px;
+
+  margin:
+    0 9px;
+
+  border-radius:
+    20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #241025,
+      #080609,
+      #241025
+    );
+}
+
+
+/* CASSETTE BOTTOM */
+
+.cassette-bottom {
+  position:
+    absolute;
+
+  bottom:
+    7px;
+
+  left:
+    50%;
+
+  width:
+    55%;
+
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  transform:
+    translateX(-50%);
+}
+
+
+.bottom-hole {
+  width:
+    18px;
+
+  height:
+    5px;
+
+  border-radius:
+    5px;
+
+  background:
+    rgba(76,20,91,.5);
+}
+
+
+/* =========================
+   CASSETTE PLAYING
+========================= */
+
+.playing-art .cassette-reel {
+  animation:
+    spinCassette
+    1.1s linear
+    infinite;
+}
+
+
+/* A playful little dance while the music plays */
+.playing-art .cassette {
+  animation:
+    cassetteDance
+    2.4s ease-in-out
+    infinite;
+}
+
+
+/* Make the cassette feel alive */
+.cassette-art.playing-art {
+  animation:
+    cassettePulse
+    2.4s ease-in-out
+    infinite;
+}
+
+
+/* The tape window gently flickers */
+.playing-art .cassette-window {
+  animation:
+    tapeGlow
+    1.8s ease-in-out
+    infinite;
+}
+
+
+/* Decorative sparkles join the rhythm */
+.playing-art .sparkle-1 {
+  animation:
+    sparkleDanceOne
+    1.7s ease-in-out
+    infinite;
+}
+
+.playing-art .sparkle-2 {
+  animation:
+    sparkleDanceTwo
+    2s ease-in-out
+    infinite;
+}
+
+.playing-art .sparkle-3 {
+  animation:
+    sparkleDanceThree
+    1.5s ease-in-out
+    infinite;
+}
+
+
+@keyframes spinCassette {
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+
+}
+
+
+@keyframes cassetteDance {
+
+  0%,
+  100% {
+    transform:
+      rotate(-4deg)
+      translateY(0)
+      scale(1);
+  }
+
+  20% {
+    transform:
+      rotate(-2deg)
+      translateY(-6px)
+      scale(1.015);
+  }
+
+  50% {
+    transform:
+      rotate(-5deg)
+      translateY(-2px)
+      scale(1.025);
+  }
+
+  75% {
+    transform:
+      rotate(-2.5deg)
+      translateY(-7px)
+      scale(1.01);
+  }
+
+}
+
+
+@keyframes cassettePulse {
+
+  0%,
+  100% {
+    filter:
+      brightness(1);
+  }
+
+  50% {
+    filter:
+      brightness(1.08);
+  }
+
+}
+
+
+@keyframes tapeGlow {
+
+  0%,
+  100% {
+    box-shadow:
+      inset 0 0 0
+      rgba(255,190,215,0);
+  }
+
+  50% {
+    box-shadow:
+      inset 0 0 18px
+      rgba(255,190,215,.22);
+  }
+
+}
+
+
+@keyframes sparkleDanceOne {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg)
+      scale(1);
+    opacity:
+      .65;
+  }
+
+  50% {
+    transform:
+      translateY(-14px)
+      rotate(25deg)
+      scale(1.35);
+    opacity:
+      1;
+  }
+
+}
+
+
+@keyframes sparkleDanceTwo {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg)
+      scale(1);
+    opacity:
+      .65;
+  }
+
+  50% {
+    transform:
+      translateY(-10px)
+      rotate(-20deg)
+      scale(1.25);
+    opacity:
+      1;
+  }
+
+}
+
+
+@keyframes sparkleDanceThree {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg)
+      scale(1);
+    opacity:
+      .7;
+  }
+
+  50% {
+    transform:
+      translateY(-16px)
+      rotate(30deg)
+      scale(1.4);
+    opacity:
+      1;
+  }
+
+}
+
+
+/* =========================
+   DECORATIONS
+========================= */
+
+.sparkle {
+  position:
+    absolute;
+
+  z-index:
+    3;
+
+  color:
+    #ffd3df;
+
+  pointer-events:
+    none;
+}
+
+
+.sparkle-1 {
+  top:
+    15%;
+
+  left:
+    9%;
+
+  font-size:
+    1.3rem;
+
+  animation:
+    floatSparkle
+    3s ease-in-out
+    infinite;
+}
+
+
+.sparkle-2 {
+  top:
+    12%;
+
+  right:
+    12%;
+
+  font-size:
+    1.1rem;
+
+  animation:
+    floatSparkle
+    2.5s ease-in-out
+    infinite
+    .4s;
+}
+
+
+.sparkle-3 {
+  bottom:
+    13%;
+
+  right:
+    10%;
+
+  font-size:
+    1.4rem;
+
+  animation:
+    floatSparkle
+    3.2s ease-in-out
+    infinite
+    .7s;
+}
+
+
+@keyframes floatSparkle {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg);
+
+    opacity:
+      .65;
+  }
+
+  50% {
+    transform:
+      translateY(-8px)
+      rotate(10deg);
+
+    opacity:
+      1;
+  }
+
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-row {
+  display:
+    grid;
+
+  grid-template-columns:
+    45px
+    1fr
+    45px;
+
+  align-items:
+    center;
+
+  gap:
+    10px;
+
+  margin-top:
+    22px;
+
+  font-size:
+    .72rem;
+
+  color:
+    var(--muted);
+}
+
+
+input[type="range"] {
+  width:
+    100%;
+
+  cursor:
+    pointer;
+
+  accent-color:
+    var(--pink);
+}
+
+
+/* =========================
+   CONTROLS
+========================= */
+
+.controls {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    12px;
+
+  margin-top:
+    25px;
+}
+
+
+.control-btn {
+  width:
+    43px;
+
+  height:
+    43px;
+
+  border:
+    none;
+
+  border-radius:
+    50%;
+
+  background:
+    transparent;
+
+  color:
+    var(--pink-light);
+
+  cursor:
+    pointer;
+
+  font-size:
+    1rem;
+}
+
+
+.control-btn:hover {
+  background:
+    rgba(255,255,255,.12);
+
+  transform:
+    scale(1.05);
+}
+
+
+.control-btn.active {
+  color:
+    white;
+
+  background:
+    rgba(243,154,176,.28);
+}
+
+
+#play-btn {
+  width:
+    62px;
+
+  height:
+    62px;
+
+  border:
+    none;
+
+  border-radius:
+    50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffabc0,
+      #d35b8d
+    );
+
+  color:
+    white;
+
+  font-size:
+    1.2rem;
+
+  cursor:
+    pointer;
+
+  box-shadow:
+    0 10px 25px
+    rgba(243,154,176,.28);
+}
+
+
+/* =========================
+   VOLUME
+========================= */
+
+.volume {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    10px;
+
+  margin-top:
+    25px;
+
+  color:
+    var(--pink-light);
+}
+
+
+/* =========================
+   PLAYLIST
+========================= */
+
+.playlist-card {
+  max-height:
+    720px;
+}
+
+
+.playlist-title {
+  margin:
+    0;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    2rem;
+
+  font-weight:
+    500;
+}
+
+
+.playlist-subtitle {
+  margin:
+    5px 0 22px;
+
+  font-size:
+    .75rem;
+
+  color:
+    var(--muted);
+}
+
+
+#playlist {
+  max-height:
+    590px;
+
+  overflow-y:
+    auto;
+
+  padding-right:
+    6px;
+}
+
+
+.playlist-item {
+  width:
+    100%;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    13px;
+
+  padding:
+    13px 10px;
+
+  border:
+    none;
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,.08);
+
+  background:
+    transparent;
+
+  color:
+    white;
+
+  text-align:
+    left;
+
+  cursor:
+    pointer;
+}
+
+
+.playlist-item:hover {
+  background:
+    rgba(255,255,255,.08);
+
+  border-radius:
+    9px;
+}
+
+
+.playlist-item.active {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(243,154,176,.25),
+      rgba(125,57,142,.15)
+    );
+
+  border-radius:
+    9px;
+}
+
+
+.song-number {
+  width:
+    28px;
+
+  flex-shrink:
+    0;
+
+  color:
+    var(--pink-light);
+
+  font-size:
+    .72rem;
+}
+
+
+.song-info {
+  flex:
+    1;
+
+  min-width:
+    0;
+}
+
+
+.song-name {
+  display:
+    block;
+
+  font-size:
+    .84rem;
+
+  font-weight:
+    500;
+
+  white-space:
+    nowrap;
+
+  overflow:
+    hidden;
+
+  text-overflow:
+    ellipsis;
+}
+
+
+.song-artist-name {
+  display:
+    block;
+
+  margin-top:
+    4px;
+
+  font-size:
+    .68rem;
+
+  color:
+    var(--muted);
+}
+
+
+.song-status {
+  color:
+    var(--pink-light);
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter {
+  grid-column:
+    1 / -1;
+
+  max-width:
+    720px;
+
+  margin:
+    10px auto 0;
+
+  text-align:
+    center;
+}
+
+
+.letter h2 {
+  margin:
+    0 0 20px;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    2.3rem;
+
+  font-weight:
+    500;
+}
+
+
+.letter p {
+  margin:
+    0;
+
+  line-height:
+    1.9;
+
+  font-size:
+    .9rem;
+
+  color:
+    #f7e8ef;
+
+  white-space:
+    pre-line;
+}
+
+
+.signature {
+  margin-top:
+    25px !important;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    1.5rem !important;
+
+  font-style:
+    italic;
+
+  color:
+    var(--pink-light) !important;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+  .stage {
+    grid-template-columns:
+      1fr;
+  }
+
+  .letter {
+    grid-column:
+      auto;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  main {
+    padding:
+      35px 14px;
+  }
+
+  .card {
+    padding:
+      23px 18px;
+  }
+
+  .controls {
+    gap:
+      4px;
+  }
+
+  .control-btn {
+    width:
+      40px;
+  }
+
+  .cassette-window {
+    padding:
+      8px 10px;
+  }
+
+  .cassette-reel {
+    width:
+      36px;
+
+    height:
+      36px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     TULIP LOADING SCREEN
+========================= -->
+
+<div id="loading-screen">
+
+  <div class="loading-content">
+
+    <div class="tulip-loader">
+
+      <div class="tulip">
+
+        <div class="petal petal-left"></div>
+
+        <div class="petal petal-center"></div>
+
+        <div class="petal petal-right"></div>
+
+
+        <div class="stem"></div>
+
+
+        <div class="leaf leaf-left"></div>
+
+        <div class="leaf leaf-right"></div>
+
+      </div>
+
+    </div>
+
+
+    <div class="loading-text">
+
+      <span>
+        a gentle reminder for you
+      </span>
+
+    </div>
+
+
+    <div class="loading-dots">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     MAIN WEBSITE
+========================= -->
+
+<main>
+
+
+  <!-- HEADER -->
+
+  <header class="header">
+
+  
+
+    <h1>
+      For You♡
+    </h1>
+
+  </header>
+
+
+  <div class="stage">
+
+
+    <!-- =========================
+         MUSIC PLAYER
+    ========================= -->
+
+    <section class="card">
+
+
+      <div class="now-playing">
+
+        <div class="music-label">
+          Now Playing
+        </div>
+
+        <div id="song-title">
+          Karera
+        </div>
+
+        <div id="song-artist">
+          BINI
+        </div>
+
+      </div>
+
+
+      <!-- CASSETTE -->
+
+      <div
+        class="cassette-art"
+        id="album-art"
+      >
+
+        <div class="sparkle sparkle-1">
+          ✦
+        </div>
+
+        <div class="sparkle sparkle-2">
+          ♥
+        </div>
+
+        <div class="sparkle sparkle-3">
+          ✿
+        </div>
+
+
+        <div class="cassette">
+
+
+          <div class="cassette-top">
+
+            <div class="cassette-screw"></div>
+
+            <div class="cassette-screw"></div>
+
+          </div>
+
+
+          <div class="cassette-label">
+
+            <div class="cassette-mini-title">
+            
+            </div>
+
+
+            <div class="cassette-song">
+
+              <span id="cassette-title">
+                Karera
+              </span>
+
+            </div>
+
+
+            <div class="cassette-artist">
+
+              <span id="cassette-artist">
+                BINI
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="cassette-window">
+
+            <div class="cassette-reel">
+
+              <div class="reel-hole"></div>
+
+            </div>
+
+
+            <div class="tape-line"></div>
+
+
+            <div class="cassette-reel">
+
+              <div class="reel-hole"></div>
+
+            </div>
+
+          </div>
+
+
+          <div class="cassette-bottom">
+
+            <div class="bottom-hole"></div>
+
+            <div class="bottom-hole"></div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- PROGRESS -->
+
+      <div class="progress-row">
+
+        <span id="current-time">
+          0:00
+        </span>
+
+
+        <input
+          type="range"
+          id="progress"
+          min="0"
+          max="100"
+          value="0"
+        >
+
+
+        <span id="duration">
+          0:00
+        </span>
+
+      </div>
+
+
+      <!-- CONTROLS -->
+
+      <div class="controls">
+
+
+        <button
+          class="control-btn"
+          id="shuffle-btn"
+          type="button"
+          title="Shuffle"
+        >
+          ⇄
+        </button>
+
+
+        <button
+          class="control-btn"
+          id="prev-btn"
+          type="button"
+          title="Previous"
+        >
+          ◀◀
+        </button>
+
+
+        <button
+          id="play-btn"
+          type="button"
+          title="Play"
+        >
+
+          <span id="play-icon">
+            ▶
+          </span>
+
+          <span
+            id="pause-icon"
+            style="display:none"
+          >
+            Ⅱ
+          </span>
+
+        </button>
+
+
+        <button
+          class="control-btn"
+          id="next-btn"
+          type="button"
+          title="Next"
+        >
+          ▶▶
+        </button>
+
+
+        <button
+          class="control-btn"
+          id="repeat-btn"
+          type="button"
+          title="Repeat"
+        >
+          ↻
+        </button>
+
+
+      </div>
+
+
+      <!-- VOLUME -->
+
+      <div class="volume">
+
+        <span>
+          ◖
+        </span>
+
+        <input
+          type="range"
+          id="volume"
+          min="0"
+          max="1"
+          step="0.01"
+          value="1"
+        >
+
+      </div>
+
+
+    </section>
+
+
+    <!-- =========================
+         PLAYLIST
+    ========================= -->
+
+    <section class="card playlist-card">
+
+      <h2 class="playlist-title">
+        The playlist
+      </h2>
+
+      <p class="playlist-subtitle">
+        choose a song whenever you need it
+      </p>
+
+      <div id="playlist"></div>
+
+    </section>
+
+
+    <!-- =========================
+         MESSAGE
+    ========================= -->
+
+    <section class="card letter">
+
+      <h2>For you, Chin</h2>
+
+      <p>
+You do not have to rush becoming the person you want to be. You have your own path, your own pace, and so much ahead of you to discover.<br><br>
+
+I know there may be days when things feel uncertain, heavy, or difficult to understand. There may even be things from the past, thoughts, fears, or experiences that still bother or haunt you. But I genuinely hope that, little by little, you find the strength to face them and eventually overcome whatever has been weighing on your heart.<br><br>
+
+Please don't underestimate yourself. I believe there are so many things you are capable of conquering and pursuing. You don't have to have everything figured out right now. Just keep moving, keep learning, and keep giving yourself the chance to become who you want to be.<br><br>
+
+Keep discovering what makes you happy. Keep chasing the things that genuinely matter to you. Change your mind if you need to. Take a break when things become too much. Start again whenever you have to. None of those things mean you are failing. They simply mean you are growing and finding your way.<br><br>
+
+Whatever challenges come your way, I hope you remember that you are stronger and more capable than the doubts that sometimes try to hold you back. I hope you get to pursue the life, dreams, and happiness that you truly want, and that you find the courage to keep choosing yourself along the way.<br><br>
+
+I made this playlist hoping these songs can keep you company whenever you need them. Maybe on the days you need a little strength, a little peace, or simply a reminder that you can keep going.<br><br>
+
+And whatever it is that you are quietly carrying, I sincerely hope that one day, it no longer has power over you.<br><br>
+
+Take things one step at a time. You have more strength in you than you probably realize, Chin. ♡
+      </p>
+
+      <p class="signature">For Chin ♡</p>
+
+    </section>
+
+
+  </div>
+
+</main>
+
+
+<script>
+
+/* =========================
+   SONGS
+========================= */
+
+const songs = [
+  { title: "Karera", artist: "BINI", src: "https://res.cloudinary.com/cokvz4ol/video/upload/v1788170271/1.mp3" },
+  { title: "Hawak Kamay", artist: "Yeng Constantino", src: "https://res.cloudinary.com/cokvz4ol/video/upload/v1788170272/2.mp3" },
+  { title: "Leaves", artist: "Ben&Ben", src: "https://res.cloudinary.com/cokvz4ol/video/upload/v1788170278/3.mp3" },
+  { title: "Araw-Araw", artist: "Ben&Ben", src: "https://res.cloudinary.com/cokvz4ol/video/upload/v1788170271/4.mp3" },
+  { title: "Bawat Piyesa", artist: "Munimuni", src: "https://res.cloudinary.com/cokvz4ol/video/upload/v1788170272/5.mp3" },
+  { title: "Tahanan", artist: "Adie", src: "https://res.cloudinary.com/cokvz4ol/video/upload/v1788170268/6.mp3" },
+  { title: "Huwag Kang Matakot", artist: "Eraserheads", src: "https://res.cloudinary.com/cokvz4ol/video/upload/v1788170288/7.mp3" },
+  { title: "If You Could See Me Now", artist: "The Script", src: "https://res.cloudinary.com/cokvz4ol/video/upload/v1788170272/8.mp3" },
+  { title: "Unwritten", artist: "Natasha Bedingfield", src: "https://res.cloudinary.com/cokvz4ol/video/upload/v1788170273/9.mp3" },
+  { title: "Try", artist: "Colbie Caillat", src: "https://res.cloudinary.com/cokvz4ol/video/upload/v1788170276/10.mp3" },
+  { title: "Scars to Your Beautiful", artist: "Alessia Cara", src: "https://res.cloudinary.com/cokvz4ol/video/upload/v1788170274/11.mp3" },
+  { title: "Who You Are", artist: "Jessie J", src: "https://res.cloudinary.com/cokvz4ol/video/upload/v1788170278/12.mp3" },
+  { title: "Rainbow", artist: "Kacey Musgraves", src: "https://res.cloudinary.com/cokvz4ol/video/upload/v1788170277/13.mp3" },
+  { title: "I Am Light", artist: "India.Arie", src: "https://res.cloudinary.com/cokvz4ol/video/upload/v1788170277/14.mp3" },
+  { title: "Put Your Records On", artist: "Corinne Bailey Rae", src: "https://res.cloudinary.com/cokvz4ol/video/upload/v1788170279/15.mp3" },
+  { title: "Brave", artist: "Sara Bareilles", src: "https://res.cloudinary.com/cokvz4ol/video/upload/v1788170283/19.mp3" },
+  { title: "Rise Up", artist: "Andra Day", src: "https://res.cloudinary.com/cokvz4ol/video/upload/v1788170283/17.mp3" },
+  { title: "Beautiful", artist: "India.Arie", src: "https://res.cloudinary.com/cokvz4ol/video/upload/v1788170281/18.mp3" },
+  { title: "My Silver Lining", artist: "First Aid Kit", src: "https://res.cloudinary.com/cokvz4ol/video/upload/v1788170283/19.mp3" },
+  { title: "Here Comes the Sun", artist: "The Beatles", src: "https://res.cloudinary.com/cokvz4ol/video/upload/v1788170282/20.mp3" }
+];
+
+
+/* =========================
+   AUDIO
+========================= */
+
+const audio = new Audio();
+
+audio.preload = "metadata";
+audio.volume = 1;
+audio.muted = false;
+
+
+/* =========================
+   STATE
+========================= */
+
+let currentSong = 0;
+
+let shuffle = false;
+
+/*
+  0 = OFF
+  1 = REPEAT ALL
+  2 = REPEAT ONE
+*/
+
+let repeatMode = 0;
+
+
+/* =========================
+   ELEMENTS
+========================= */
+
+const songTitle =
+  document.getElementById("song-title");
+
+const songArtist =
+  document.getElementById("song-artist");
+
+const cassetteTitle =
+  document.getElementById("cassette-title");
+
+const cassetteArtist =
+  document.getElementById("cassette-artist");
+
+const playlistElement =
+  document.getElementById("playlist");
+
+const playBtn =
+  document.getElementById("play-btn");
+
+const playIcon =
+  document.getElementById("play-icon");
+
+const pauseIcon =
+  document.getElementById("pause-icon");
+
+const prevBtn =
+  document.getElementById("prev-btn");
+
+const nextBtn =
+  document.getElementById("next-btn");
+
+const shuffleBtn =
+  document.getElementById("shuffle-btn");
+
+const repeatBtn =
+  document.getElementById("repeat-btn");
+
+const progress =
+  document.getElementById("progress");
+
+const currentTime =
+  document.getElementById("current-time");
+
+const duration =
+  document.getElementById("duration");
+
+const volume =
+  document.getElementById("volume");
+
+const albumArt =
+  document.getElementById("album-art");
+
+
+/* =========================
+   PLAYLIST
+========================= */
+
+function renderPlaylist() {
+
+  playlistElement.innerHTML = "";
+
+
+  songs.forEach((song, index) => {
+
+    const item =
+      document.createElement("button");
+
+
+    item.type = "button";
+
+
+    item.className =
+      "playlist-item";
+
+
+    if (index === currentSong) {
+
+      item.classList.add("active");
+
+    }
+
+
+    item.innerHTML = `
+
+      <span class="song-number">
+        ${String(index + 1).padStart(2, "0")}
+      </span>
+
+      <span class="song-info">
+
+        <span class="song-name">
+          ${song.title}
+        </span>
+
+        <span class="song-artist-name">
+          ${song.artist}
+        </span>
+
+      </span>
+
+      <span class="song-status">
+        ${index === currentSong ? "♪" : ""}
+      </span>
+
+    `;
+
+
+    item.addEventListener(
+      "click",
+      () => {
+
+        loadSong(index, true);
+
+      }
+    );
+
+
+    playlistElement.appendChild(item);
+
+  });
+
+}
+
+
+/* =========================
+   LOAD SONG
+========================= */
+
+function loadSong(
+  index,
+  autoplay = false
+) {
+
+  currentSong = index;
+
+  const song =
+    songs[currentSong];
+
+
+  audio.pause();
+
+
+  audio.src =
+    song.src;
+
+
+  audio.load();
+
+
+  songTitle.textContent =
+    song.title;
+
+
+  songArtist.textContent =
+    song.artist;
+
+
+  cassetteTitle.textContent =
+    song.title;
+
+
+  cassetteArtist.textContent =
+    song.artist;
+
+
+  progress.value = 0;
+
+  currentTime.textContent =
+    "0:00";
+
+  duration.textContent =
+    "0:00";
+
+
+  renderPlaylist();
+
+
+  if (autoplay) {
+
+    audio.play()
+      .catch(error => {
+
+        console.error(
+          "Playback error:",
+          error
+        );
+
+      });
+
+  }
+
+}
+
+
+/* =========================
+   PLAY / PAUSE
+========================= */
+
+playBtn.addEventListener(
+  "click",
+  () => {
+
+    if (!audio.src) {
+
+      loadSong(currentSong);
+
+    }
+
+
+    if (audio.paused) {
+
+      audio.muted = false;
+
+      audio.volume =
+        Number(volume.value);
+
+
+      audio.play()
+        .catch(error => {
+
+          console.error(
+            "Playback error:",
+            error
+          );
+
+        });
+
+    } else {
+
+      audio.pause();
+
+    }
+
+  }
+);
+
+
+/* =========================
+   PLAY STATE
+========================= */
+
+audio.addEventListener(
+  "play",
+  () => {
+
+    playIcon.style.display =
+      "none";
+
+    pauseIcon.style.display =
+      "inline";
+
+    albumArt.classList.add(
+      "playing-art"
+    );
+
+  }
+);
+
+
+audio.addEventListener(
+  "pause",
+  () => {
+
+    playIcon.style.display =
+      "inline";
+
+    pauseIcon.style.display =
+      "none";
+
+    albumArt.classList.remove(
+      "playing-art"
+    );
+
+  }
+);
+
+
+/* =========================
+   SHUFFLE
+========================= */
+
+shuffleBtn.addEventListener(
+  "click",
+  () => {
+
+    shuffle = !shuffle;
+
+
+    shuffleBtn.classList.toggle(
+      "active",
+      shuffle
+    );
+
+  }
+);
+
+
+function playRandomSong() {
+
+  if (songs.length <= 1) {
+
+    return;
+
+  }
+
+
+  let randomSong;
+
+
+  do {
+
+    randomSong =
+      Math.floor(
+        Math.random() *
+        songs.length
+      );
+
+  } while (
+    randomSong === currentSong
+  );
+
+
+  loadSong(
+    randomSong,
+    true
+  );
+
+}
+
+
+/* =========================
+   REPEAT
+========================= */
+
+repeatBtn.addEventListener(
+  "click",
+  () => {
+
+    repeatMode++;
+
+
+    if (repeatMode > 2) {
+
+      repeatMode = 0;
+
+    }
+
+
+    updateRepeat();
+
+  }
+);
+
+
+function updateRepeat() {
+
+  repeatBtn.classList.remove(
+    "active"
+  );
+
+
+  if (repeatMode === 0) {
+
+    repeatBtn.textContent =
+      "↻";
+
+  }
+
+
+  if (repeatMode === 1) {
+
+    repeatBtn.textContent =
+      "↻";
+
+    repeatBtn.classList.add(
+      "active"
+    );
+
+  }
+
+
+  if (repeatMode === 2) {
+
+    repeatBtn.textContent =
+      "↻1";
+
+    repeatBtn.classList.add(
+      "active"
+    );
+
+  }
+
+}
+
+
+/* =========================
+   NEXT
+========================= */
+
+nextBtn.addEventListener(
+  "click",
+  () => {
+
+    if (shuffle) {
+
+      playRandomSong();
+
+      return;
+
+    }
+
+
+    currentSong++;
+
+
+    if (
+      currentSong >=
+      songs.length
+    ) {
+
+      currentSong = 0;
+
+    }
+
+
+    loadSong(
+      currentSong,
+      true
+    );
+
+  }
+);
+
+
+/* =========================
+   PREVIOUS
+========================= */
+
+prevBtn.addEventListener(
+  "click",
+  () => {
+
+    if (
+      audio.currentTime > 3
+    ) {
+
+      audio.currentTime = 0;
+
+      return;
+
+    }
+
+
+    if (shuffle) {
+
+      playRandomSong();
+
+      return;
+
+    }
+
+
+    currentSong--;
+
+
+    if (currentSong < 0) {
+
+      currentSong =
+        songs.length - 1;
+
+    }
+
+
+    loadSong(
+      currentSong,
+      true
+    );
+
+  }
+);
+
+
+/* =========================
+   AUDIO METADATA
+========================= */
+
+audio.addEventListener(
+  "loadedmetadata",
+  () => {
+
+    duration.textContent =
+      formatTime(
+        audio.duration
+      );
+
+  }
+);
+
+
+/* =========================
+   AUDIO PROGRESS
+========================= */
+
+audio.addEventListener(
+  "timeupdate",
+  () => {
+
+    if (
+      !Number.isFinite(
+        audio.duration
+      )
+    ) {
+
+      return;
+
+    }
+
+
+    progress.value =
+      (
+        audio.currentTime /
+        audio.duration
+      ) * 100;
+
+
+    currentTime.textContent =
+      formatTime(
+        audio.currentTime
+      );
+
+  }
+);
+
+
+/* =========================
+   SEEK
+========================= */
+
+progress.addEventListener(
+  "input",
+  () => {
+
+    if (
+      !Number.isFinite(
+        audio.duration
+      )
+    ) {
+
+      return;
+
+    }
+
+
+    audio.currentTime =
+      (
+        Number(progress.value) /
+        100
+      ) *
+      audio.duration;
+
+  }
+);
+
+
+/* =========================
+   VOLUME
+========================= */
+
+volume.addEventListener(
+  "input",
+  () => {
+
+    audio.volume =
+      Number(volume.value);
+
+    audio.muted = false;
+
+  }
+);
+
+
+/* =========================
+   SONG ENDED
+========================= */
+
+audio.addEventListener(
+  "ended",
+  () => {
+
+
+    /* REPEAT ONE */
+
+    if (repeatMode === 2) {
+
+      audio.currentTime = 0;
+
+      audio.play();
+
+      return;
+
+    }
+
+
+    /* SHUFFLE */
+
+    if (shuffle) {
+
+      playRandomSong();
+
+      return;
+
+    }
+
+
+    /* NEXT SONG */
+
+    if (
+      currentSong <
+      songs.length - 1
+    ) {
+
+      currentSong++;
+
+      loadSong(
+        currentSong,
+        true
+      );
+
+      return;
+
+    }
+
+
+    /* REPEAT ALL */
+
+    if (repeatMode === 1) {
+
+      currentSong = 0;
+
+      loadSong(
+        currentSong,
+        true
+      );
+
+      return;
+
+    }
+
+
+    /* STOP */
+
+    audio.currentTime = 0;
+
+  }
+);
+
+
+/* =========================
+   AUDIO ERROR
+========================= */
+
+audio.addEventListener(
+  "error",
+  () => {
+
+    console.error(
+      "Cannot load audio file:"
+    );
+
+    console.error(
+      songs[currentSong].src
+    );
+
+  }
+);
+
+
+/* =========================
+   FORMAT TIME
+========================= */
+
+function formatTime(seconds) {
+
+  if (
+    !Number.isFinite(seconds)
+  ) {
+
+    return "0:00";
+
+  }
+
+
+  const minutes =
+    Math.floor(
+      seconds / 60
+    );
+
+
+  const secs =
+    Math.floor(
+      seconds % 60
+    );
+
+
+  return (
+    minutes +
+    ":" +
+    String(secs).padStart(
+      2,
+      "0"
+    )
+  );
+
+}
+
+
+/* =========================
+   INITIALIZE PLAYER
+========================= */
+
+loadSong(0);
+
+updateRepeat();
+
+
+/* =========================
+   LOADING SCREEN
+========================= */
+
+window.addEventListener(
+  "load",
+  () => {
+
+    const loadingScreen =
+      document.getElementById(
+        "loading-screen"
+      );
+
+
+    /*
+      Keep the tulip visible
+      briefly so the animation
+      can actually be seen.
+    */
+
+    setTimeout(
+      () => {
+
+        loadingScreen.classList.add(
+          "hide"
+        );
+
+      },
+      2200
+    );
+
+
+    setTimeout(
+      () => {
+
+        loadingScreen.remove();
+
+      },
+      3100
+    );
+
+  }
+);
+
+</script>
+
+</body>
+</html>
